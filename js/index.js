@@ -129,3 +129,83 @@ x++; //x = x+1; или ++х
 
 x--; //x = x-1; или --х
 
+// возведение в степень
+result = 5 ** 2;
+console.log(result);
+result = 5 ** 3;
+console.log(result);
+result = 5 ** (1/2);
+console.log(result);
+
+
+/*
+Задание
+1 Создайте переменные a=10 и b=20. Отнимите от a переменную b и 
+результат присвойте переменной c. Затем создайте переменную d, 
+присвойте ей значение c. Сложите переменные c и d, 
+а результат запишите в переменную result.
+
+2 Переделайте этот код так, чтобы в нем использовались операции 
++=, -=, *=, /=, ++, - -
+let num = 100;
+num = num + 7;
+num = num - 18;
+num = num * 10;
+num = num / 15;
+num = num + 1;
+num = num - 1;
+
+3 Спросите у пользователя число. Возведите это число в квадрат.
+
+*/
+
+/*
+
+// решение
+//1
+let a=10, b=20, c, d, res;
+c = a - b;
+d = c;
+res = c + d;
+console.log(res);
+
+//2
+let num = 100;
+num += 7;
+num -= 18;
+num *= 10;
+num /= 15;
+num += 1; // num++
+num -= 1; // num--
+
+//3
+let userNumber = prompt('Enter some value');
+res = userNumber ** 2;
+console.log('Result task3 is ',res);
+*/
+
+//4
+// Задание : вычислите площать прямоугольника по введенным данным
+// S = a * b;
+
+//5
+// Задание : перевести мм в сантиметры (спросить мм в ответе выдать см)
+
+//4
+let a = 5, b=7, S;
+S = a*b;
+console.log('Square is ', S, 'm');
+
+//5
+let userValueMM, userValueCM;
+userValueMM = 1000;
+userValueCM = userValueMM / 10;
+console.log(userValueMM, "mm =", userValueCM, "cm");
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@ console.log("Hello, Vasya!!!");
 console.log("Hello ","Java Script", "!!!!!");
 
 //******************* */
-
+/*
 // переменые style camelCase;
 
 //обьявление переменных
@@ -95,4 +95,37 @@ result = 500 - result;
 console.log(result);
 
 
+*/
+// константа
+
+const COLOR_RED = "#FF0000";
+const COLOR_GREEN = "#00FF00";
+const COLOR_BLUE = "#0000FF";
+const MAX_QUERIES = 3;
+
+//COLOR_RED = "#FF0011"; errror!
+
+let x = 100;
+x = x + MAX_QUERIES;
+console.log(x);
+
+// операции краткие записи
+// + - * /
+let a1 = 200, a2 = 100, result;
+a1 += 5;  //a1 = a1 + 5;
+a1 -=5; //a1 = a1 - 5;
+a1 *= 5; //a1 = a1 * 5;
+a1 /= 5; //a1 = a1 / 5;
+
+a2 += a1; //a2 = a2 + a1;
+a2 -= a1; //a2 = a2 - a1;
+a2 *= a1; //a2 = a2 * a1;
+a2 /= a1; //a2 = a2 / a1;
+
+// операция инкремент / декремент
+x= 10;
+
+x++; //x = x+1; или ++х
+
+x--; //x = x-1; или --х
 

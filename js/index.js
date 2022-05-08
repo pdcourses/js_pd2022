@@ -1,105 +1,60 @@
-// условные операторы
-//   >    <     >=     <=     ==     !=    === включая проверку типа
-let a,b;
-
-a = 5;
-b = 7;
-
-console.log(a > b);
-console.log(a < b);
-console.log(a == b);
-console.log(a != b);
-console.log(a === b);
-
-// условный оператор if 
-/*
-if(условие){
-    //набор действий если условие выполняется
-}
-*/
-/*
-let userAge = prompt('Введите свой возраст');
-if(userAge >= 18) {
-    alert('Вы - совершеннолетний');
-}
-*/
+// циклы for , while
 
 /*
-if(условие){
-    список действий при выполнении условия
-} else{
-    список действий при НЕ выполнении условия
+for (начальное условие; конечное условие;  шаг ) {
+    дейсвие
 }
+
 */
+
+// Задача. посчитать сумму чисел от 1 до 10
+
+let start = 1, end = 10, result = 0;
+
+
+for(start = 0; start <= end; start = start+2){
+    result = result + start;
+    console.log(result);
+}
+console.log(result);
+
+
+// for(start = 0; start <= end; start++){}
+
+// for(start; start <= end; start++){}
+
 /*
-let userAge = prompt('Введите свой возраст');
-if(userAge >= 18) {
-    alert('Вы - совершеннолетний');
-}else{
-    alert('Вы - несовершеннолетний');
-}
-*/
-// Задание. Пользователь вводит число. Проверьте больше или 
-// меньше оно 10
-/*
-let value = prompt('Enter some value');
-if(value >= 10){
-    console.log('Your value more than 10');
-} else{
-    console.log('Your value less than 10');
-}
-*/
-// проверить число пожительное, отрицательное или 0
-/*
-let x = prompt('Enter x');
-if( x > 0) {
-    console.log('положительное');
-} else if (x < 0) {
-    console.log('отрицательное');
-} else {
-    console.log('это ноль');
-}
+result = ;1+2+3+4+5+6+7+8+9+10
+
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
+start ++;
+result = result + start;
 */
 
-// тернарный оператор ?
-//let result = условие ? значение1 : значение2;
-/*
-let userAge = 18;
-let res = (userAge >= 18 ) ? 'совершеннолетний' : 'несовершеннолетний';
-console.log(res);
-*/
-// оператор остаток от деления % для чисел
-console.log(5 % 2);
 
-// Задача. Спросить у пользователя число и узнать четное оно или нечетное
-//1
-let value = prompt('value =');
-if (value%2 == 0){
-    console.log('четное');
-} else{
-    console.log('нечетное');
+// вывести число от 1 до 10
+let i;
+for (i=1; i<=10; i++){
+    console.log(i);
 }
-//2
-if (value%2 != 0){
-    console.log('нечетное');
-} else{
-    console.log('четное');
+
+// вывести число от 10 до 1
+for (i=10; i>=1; i--){
+    console.log(i);
 }
-//3
-let res = (value%2 == 0) ? 'четное' : 'нечетное';
-console.log(res);
-
-// несколько условий
-// && and - и || or - или
-
-// пример . поступаемое число положительное и больше 10
-if(value>0 && value>10){}
-// пример. поступаемое число положительное или равно 0
-if(value>0 || value==0){}
-
-if(weekDay == "Sunday" && isWorking == true) { console.log('yes');}
-if(surface == "бумага" || surface == "салфетка") {}
-
-
-
-

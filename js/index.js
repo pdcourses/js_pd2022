@@ -1,291 +1,153 @@
-// if-else
 /*
-if(условие1){
-    действия если условие1 выполняется
-} else if (условие2){
-    действия если условие2 выполняется
-} else if (условие3){
-    действия если условие3 выполняется
-} else{
-    все другие варианты
+function add(a, b){
+    let result = a+b;
+    return result;
+}
+function sub(a, b){
+    let result = a-b;
+    return result;
+}
+function mult(a,b){
+    let result = a*b;
+    return result;
+}
+function divi(a,b){
+    let result = a/b;
+    return result;
 }
 
-if == > < >= <= ,  && и      || или
+let val1, val2;
+val1 = Number(prompt('Enter value 1'));
+val2 = Number(prompt('Enter value 2'));
+console.log('+', add(val1, val2));
+console.log('-', sub(val1, val2));
+console.log('*', mult(val1, val2));
+console.log('/', divi(val1, val2));
+*/
+// задача . вывести сообщение столько раз сколько задает пользователь
+
+function repeatMsg(countMaxMsg){
+    /*
+    while(countMaxMsg>0){
+        console.log('hello');
+        countMaxMsg--;
+    }
+    */
+    let i;
+    for(i=1; i<=countMaxMsg; i++){
+        console.log('hello');
+    }
+}
+
+repeatMsg(5);
+
+// задача
+/*
+
+*****
+
 */
 
-// если четное то умножить на 2, нечетное - поделить на 2
-let value = 100;
-if(value%2 == 0){
-    value = value * 2; // value *= 2;
-} else {
-    value /= 2;
+function printSymbols(symbolStr, countMax){
+    let i, str="";
+    for(i=1; i<=countMax; i++){
+        str = str + symbolStr;
+    }
+    return str;
+   // console.log(str); //  вызов printSymbols("*", 5);
+   //return str; // вызов console.log(printSymbols("*", 5))
+
 }
 
-// если четное или меньше 100 то умножить на 2, нечетное - поделить на 2
-if(value%2 == 0 || value <= 100){
-    value = value * 2; // value *= 2;
-} else {
-    value /= 2;
-}
-
-// если число меньше 10 вычесть 1 из него, если от 10 до 100 вычесть 5, 
-//если больше 100 поделить на 2
-
-if(value < 10){
-    value = value - 1;
-} else if (value >=10 && value <100){
-    value = value - 5;
-} else if (value >= 100) {
-    value = value / 2;
-} else {
-    console.log('Error');
-}
-
-// -M .... 9.9    value = value - 1
-// 10 .... 99.9   value = value - 5
-// 100 .... M     value = value / 2
-
-// ! выше по коду проверка что value єто точно число
-
-if(value < 10){
-    value = value - 1;
-} else if (value >= 100) {
-    value = value / 2;
-} else {
-    value = value - 5;
-}
-
-
-// for
-/*
-for (начальное условие; конечное условие; шаг){
-    действие
-}
-*/
-
-/*
-let num = 1, result =0;
-for(num=1; num<=100; num = num +1){
-    result = result + num;
-}
-
-// найти произведение чисел от 2 до 8
-result = 1;
-for(num=2; num<=8; num++){
-    result = result * num;
-}
+let result;
+result = printSymbols("*", 5);
+console.log(result);
+result = printSymbols("%", 10);
+console.log(result);
+result = printSymbols("$", 5);
 console.log(result);
 
-// найти сумму нечетных чисел от 10 до 50
-result = 0;
 
-//1
-for(num=10; num <=50; num++){
-    if(num%2 == 1){
-        result = result + num;
+function printSymbols2(symbolStr, countMax = 1){
+    let i, str="";
+    for(i=1; i<=countMax; i++){
+        str = str + symbolStr;
+    }
+    return str;
+}
+result = printSymbols2("*");
+console.log(result);
+result = printSymbols2("*",10);
+console.log(result);
+
+/*
+// с ошибкой! значения по умолчанию в конце
+function printSymbols3(countMax = 1, symbolStr){
+    let i, str="";
+    for(i=1; i<=countMax; i++){
+        str = str + symbolStr;
+    }
+    return str;
+}
+result = printSymbols3("*");
+console.log(result);
+result = printSymbols3(10, "*");
+console.log(result);
+*/
+
+// задача
+// вывесли все числа кратные 5 в указзом диапазоне пользователем
+// function/ limit1, limit2
+function task1(minLimit, maxLimit){
+    let num;
+    for(num = minLimit; num <= maxLimit; num ++){
+        if(num %5 == 0){
+            console.log(num);
+        }
     }
 }
-//2
-for(num=11; num <=50; num = num +1){
-        result = result + num;
-}
-*/
 
-/*
-for (начальное условие; конечное условие; шаг){
-    действие
+function task1_2(minLimit, maxLimit){
+    for(minLimit; minLimit <= maxLimit; minLimit ++){
+        if(minLimit %5 == 0){
+            console.log(minLimit);
+        }
+    }
 }
 
 
-начальное условие
-
-while(конечное условие){
-    действие
-}
-
-*/
-
-/*
-// сумма чисел от 1 до 10
-let n, res=0;
-
-for(n=1; n<=10; n++){
-    res = res + n;
-}
-console.log('FOR:',res);
-
-
-n=1, res=0;
-while(n<=10){
-    res = res + n;
-    n++;
-}
-
-
-
-// вывести числа от 5 до 0
-n=5;
-while(n>=0){
-    console.log(n);
-    n = n-1;
-}
-
-for(n=5; n>=0; n--){
-    console.log(n);
-}
-
-// вывести числа от 5 до 0 . выводить их квадраты
-// 25 16 9 4 1 0
-n=5;
-while(n>=0){
-    n = n^2; // n = n*n
-    console.log(n);
-    n = n-1; // n--
-}
-*/
-
-/*
-// вывести числа от 5 до 0
-let n=-100;
-/*
-while(n>=0){
-    console.log(n);
-    n = n-1;
-}
-*/
-
-/*
-do{
-    console.log(n);
-    n = n-1;
-} while(n>=0);
-*/
-
-/*
-//Задача. Циклом . Выйти когда сумма чисел превысит 100. дополнительно посмотреть на каком числе остановились
-let n = 1, sum = 0;
-while(true) {
-    sum +=n
-    if (sum > 100) break;
-    n++;
-}
-console.log(n);
-console.log(sum);
-
-
-sum=0;
-for(n=1; ;n++){
-    sum +=n;
-    if (sum > 100) break;
-}
-console.log(n);
-console.log(sum);
-
-
-//бесконечній цикл 
-//while(true){}
-//for( ; ; ){}
-// while(false){}
-
-n=10000;
-do{
-    console.log(`You are lucky! ${n} $!!!!`);
-}while(false);
-
-while(false){
-    console.log('Second msg');
-}
-
-
-let x1=1, x2=2, x3=3;
-console.log('Result:',x1,x2,x3);
-console.log('Result: x1,x2,x3 ');
-console.log(`Result: ${x1} ${x2} ${x3}`);
-
-
-
-let userValue = prompt('Введи номер месяца');
-let result;
-if(userValue == 1){
-    result = "Январь";
-} else if(userValue ==2){
-    result = "Февраль";
-} else if(userValue ==3){
-    result = "М";
-} else if(userValue ==4){
-    result = "А";
-} else if(userValue ==5){
-    result = "М";
-} else{
-    result='нет такого месяца';
-}
-
-
-switch(userValue){
-    case 1:  result = "Январь"; break;
-    case 2:  result = "Февраль"; break;
-    //...
-    default: result='нет такого месяца'; break;
-}
-*/
-
-//задачки
-
-// 1 попросить пользователя ответить сколько будет 2+2. сказать прав или нет
-
-// 2 попросить пользователя ответить сколько будет 2+2. сказать прав или нет.
-// спрашить пока он не решит правильно
-
-// 3 посчитать сумму нечетных чисел от 1 до 20  используя for / while
-
-
-//let x = promt('Введи число')
-// alert('Some msg')
+// задача
+// сделать функцию которая проверяет сумму двух указанных чисел 
+// function a,b (result) 'a+b=?' да/нет
 
 //1
-let result = 4;
+function task2(number1, number2, answer){
+    if(number1+number2 == answer){
+        return true;
+    }
+    return false;
+}
+
 let answer = prompt('2+2=?');
-if(answer == result){
-    alert('Bingo!')
+let res;
+res = task2(2,2,answer);
+if(res == true){
+    console.log('yes');
 }else{
-    alert('Sorry :(((( Wrong')
+    console.log('no');
 }
-//2  1
-while(true){
-    answer = prompt('2+2=?');
-    if(answer == result){
-        alert('Bingo!');
-        break;
+
+//2
+
+function task2_2(number1, number2, answer){
+    if(number1+number2 == answer){
+        console.log('yes');
     }
-    alert('Sorry :(((( Wrong');
-}
-//2 2
-/*
-do{
-    answer = prompt('2+2=?');
-} while(answer == result);
-*/
-//3
-
-let number = 1, limit = 20, res =0;
-
-for(number=1; number <= limit; number = number + 2){
-    res = res + number;
+    console.log('no');
 }
 
-number = 1, res =0;
-while(number <= limit) {
-    res = res + number;
-    number = number + 2;
-}
-
-
-
-
-
-
-
-
+answer = prompt('2+2=?');
+task2(2,2,answer);
 
 
 

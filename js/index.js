@@ -1,153 +1,71 @@
-/*
-function add(a, b){
-    let result = a+b;
-    return result;
-}
-function sub(a, b){
-    let result = a-b;
-    return result;
-}
-function mult(a,b){
-    let result = a*b;
-    return result;
-}
-function divi(a,b){
-    let result = a/b;
-    return result;
-}
+/*Массивы*/
 
-let val1, val2;
-val1 = Number(prompt('Enter value 1'));
-val2 = Number(prompt('Enter value 2'));
-console.log('+', add(val1, val2));
-console.log('-', sub(val1, val2));
-console.log('*', mult(val1, val2));
-console.log('/', divi(val1, val2));
+// К массиву доступ по индексу
+
+// 100, 120, 6, 320, 15
+// product1, product2, product3, product4, product5
+// totalSum
+
+/*let total=0, p1, p2, p3, p4 , p5, ... p30;
+p1 =100, p2 = 120, p3=6, p4=320, p5=15;
+total = p1 + p2 + p3+ p4 + p5;
+
+console.log(total);
 */
-// задача . вывести сообщение столько раз сколько задает пользователь
-
-function repeatMsg(countMaxMsg){
-    /*
-    while(countMaxMsg>0){
-        console.log('hello');
-        countMaxMsg--;
-    }
-    */
-    let i;
-    for(i=1; i<=countMaxMsg; i++){
-        console.log('hello');
-    }
-}
-
-repeatMsg(5);
-
-// задача
+//------------------------
+//1 
+let array0 = [];
+let array1 = [100, 120, 6, 320, 15];
 /*
-
-*****
-
-*/
-
-function printSymbols(symbolStr, countMax){
-    let i, str="";
-    for(i=1; i<=countMax; i++){
-        str = str + symbolStr;
-    }
-    return str;
-   // console.log(str); //  вызов printSymbols("*", 5);
-   //return str; // вызов console.log(printSymbols("*", 5))
-
-}
-
-let result;
-result = printSymbols("*", 5);
-console.log(result);
-result = printSymbols("%", 10);
-console.log(result);
-result = printSymbols("$", 5);
-console.log(result);
-
-
-function printSymbols2(symbolStr, countMax = 1){
-    let i, str="";
-    for(i=1; i<=countMax; i++){
-        str = str + symbolStr;
-    }
-    return str;
-}
-result = printSymbols2("*");
-console.log(result);
-result = printSymbols2("*",10);
-console.log(result);
-
-/*
-// с ошибкой! значения по умолчанию в конце
-function printSymbols3(countMax = 1, symbolStr){
-    let i, str="";
-    for(i=1; i<=countMax; i++){
-        str = str + symbolStr;
-    }
-    return str;
-}
-result = printSymbols3("*");
-console.log(result);
-result = printSymbols3(10, "*");
-console.log(result);
-*/
-
-// задача
-// вывесли все числа кратные 5 в указзом диапазоне пользователем
-// function/ limit1, limit2
-function task1(minLimit, maxLimit){
-    let num;
-    for(num = minLimit; num <= maxLimit; num ++){
-        if(num %5 == 0){
-            console.log(num);
-        }
-    }
-}
-
-function task1_2(minLimit, maxLimit){
-    for(minLimit; minLimit <= maxLimit; minLimit ++){
-        if(minLimit %5 == 0){
-            console.log(minLimit);
-        }
-    }
-}
-
-
-// задача
-// сделать функцию которая проверяет сумму двух указанных чисел 
-// function a,b (result) 'a+b=?' да/нет
-
-//1
-function task2(number1, number2, answer){
-    if(number1+number2 == answer){
-        return true;
-    }
-    return false;
-}
-
-let answer = prompt('2+2=?');
-let res;
-res = task2(2,2,answer);
-if(res == true){
-    console.log('yes');
-}else{
-    console.log('no');
-}
-
 //2
+let array2 = new Array();
+*/
 
-function task2_2(number1, number2, answer){
-    if(number1+number2 == answer){
-        console.log('yes');
-    }
-    console.log('no');
+let size = array1.length;
+let i;
+
+// Задание. Вывести массив 
+//1
+console.log(array1);
+// bad method
+console.log(array1[0]);
+console.log(array1[1]);
+console.log(array1[2]);
+console.log(array1[3]);
+console.log(array1[4]);
+//2
+// i - index 0...4
+for(i = 0; i < array1.length; i++){
+    console.log(i,' ', array1[i]);
 }
 
-answer = prompt('2+2=?');
-task2(2,2,answer);
+//Задание. Обьявить массив из 5 чисел и каждое увеличить в 2 раза
+let array3 = [10,20,30,40,50];
+for(i=0; i<array3.length; i++){
+    array3[i] *= 2;//array3[i] = array3[i] * 2;
+}
+console.log('array 3task:', array3);
 
+// Задание. каждое число увеличить на 100
+for(i=0; i<array3.length; i++){
+    array3[i] += 100;
+}
+console.log('array 3task:', array3);
 
+// Задача вывести массив наоборот (с последнего к первому)
+
+for(i = array3.length-1; i>=0; i--){
+    console.log(array3[i]);
+    //console.log(i); вывод индекса
+
+}
+
+// Задача вывести элементы с нечетными индексами
+for(i=1; i<array3.length; i = i + 2){
+    console.log(array3[i]);
+}
+// Задача вывести элементы с четными индексами
+for(i=0; i<array3.length; i = i + 2){
+    console.log(array3[i]);
+}
 

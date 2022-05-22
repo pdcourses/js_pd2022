@@ -71,7 +71,7 @@ console.log(this); // доспуп к глобальному обьекту wind
 console.log(this.test);
 
 */
-
+/*
 
 // строгий режим
 "use strict";
@@ -118,7 +118,42 @@ console.log(x); //?? 300  glob x
 console.log(fun4()); // x=300
 console.log(x); //?? x=100
 
+//**************** */
+/*
+let name = "John";
 
+function sayHi() {
+  alert("Hi, " + name);
+}
 
+name = "Pete";
 
+sayHi(); // что будет показано: "John" или "Pete"?
+*/
+//************** */
+console.log('************************');
 
+function fun(){
+    let test = 10;
+    return function(){
+        return ++test;
+    }
+}
+
+let res = fun();
+console.log(res());
+console.log(res());
+console.log(res());
+console.log(res());
+console.log(res());
+console.log(res());
+console.log(res());
+console.log('************************');
+let res2 = fun();
+console.log(res2());
+console.log(res2());
+console.log(res2());
+console.log(res2());
+console.log(res2());
+console.log(res2());
+console.log(res2());

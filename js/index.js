@@ -1,39 +1,86 @@
 /*
-1 Подсчитать сумму нечетных эелементов массива
-2 Вывести индексы нулевых элементов массива
-3 дано 2 массива. соединить и преобразовать в строку
-4 отфильтровать масив, удалив все нули
+let a1 = [1,2,100,200,3];
+
+function array(c){
+	for (let i = 0; i < c.length; i++){
+	if (c[i] < 100) {
+		c[i]++;
+	}
+	}
+}
+console.log(array(c)); //[2,3,100,200,4]
+
+
+function array(c){
+    let sum = 0;
+	for (let i = 0; i < c.length; i++){
+	if (c[i] < 100) {
+		sum += c[i];
+	}
+	}
+    return sum;
+}
+
+let res = array(a1);
+console.log(res);
+
 */
 
-// 1
-//forEach(el index) if a[i]  == 0 ??? push index in res arrray
-// push - добавляет єлемент в конец
+/*
+let array = [1,2,100,200,3,3,3,3];
 
-let nullIndexes1 = (arr) => {
-    let res = [];
-    arr.forEach((el, index) => {
-        if(el == 0) res.push(index);
-    });
-    return res;
-}
+const [a0, ...rest] = array;
+console.log(a0);
+console.log(rest);
 
-//2
-// filter если ноль а потом пушим в новый
+const [arr0, arr1, ,, ...rest2] = array;
+console.log(arr0);
+console.log(arr1);
+console.log(rest2);
 
-let nullIndexes2 = (arr) => {
-    let res = [];
-    arr.filter((el, index) => {
-        if(el == 0) res.push(i);
-    });
-}
+let b = [1,2,3,4, [10,20,[100,200,300],30,40], 5, 6];
 
-//task4
-// все элементы не нолевые
-let task4 = (arr) => arr.filter(el => el!=0);
+const [,,,,[,,innerArray,,],,] =b
+//const [,,,,[,,innerArray,...r1],...r2] =b
+console.log(innerArray);
+*/
 
-//task3
-let task3_1 = (arr1, arr2) => arr1.toString()+arr2.toString();
+/*
+SET
+набор уникальных значений / похоже на массив только уникальные
 
-let task3_2 = (arr1, arr2) => arr1.toString().concat(arr2.toString());
+const s1 = new Set();
+const s2 = new Set(array);
 
-let task3_3 = (arr1, arr2) => arr1.concat(arr2).toString();
+s1.add(100);
+s1.add(-5);
+s1.add('hello');
+
+s1.delete('hello');
+
+s1.has(100);
+
+s1.clear(); //delete all
+*/
+
+//MAP
+// key+value
+/*
+const map1 = new Map();
+
+map1.set(100,'Vasya');
+map1.set(101,'Ann');
+map1.set(103,'Tom');
+map1.set(104,'Fox');
+
+map1.delete(103)
+
+map1.has(100) //true
+
+map1.get(100) //'Vasya'
+
+
+map1.set(100,'Kolya');
+
+console.log(map1);
+*/

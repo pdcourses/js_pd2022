@@ -27,8 +27,28 @@ console.log(Object.entries(ACTIONS));
 
 // копирование обьекта
 
-const test1 = {name: 'Tom', surname: 'Fox'};
+const test1 = {
+    name: 'Tom', 
+    surname: 'Fox',
+    Greeting1: function() {console.log('Hello, I am Tom');},
+    Greeting2: function() {console.log(`Hello, I am ${this.name}`);},
+    Greeting3: function(nameFriend) {console.log(`Hello, ${nameFriend}`);},
+    Greeting4: function({name}) {console.log(`Hello, ${name}`);},
+    //Greeting4: function(objFriend) {console.log(`Hello, ${objFriend.name}`);}
+    Greeting5: function({name}) {
+        if(name == '' || name ==undefined ) name='guest';
+        console.log(`Hello, ${name}`);},
+    Greeting6: () => {console.log(`Hello, I am ${this.name}`);},
+};
 
+test1.Greeting1();
+test1.Greeting2();
+test1.Greeting3('Ann');
+test1.Greeting5({name: 'Kate', surname: 'Smith', age: 18});
+test1.Greeting5({name: ''});
+test1.Greeting5({});
+
+/*
 const test2 = test1;
 console.log('--------------------');
 console.log('test1 object=',test1);
@@ -57,6 +77,7 @@ test1                               test3
 test2
 */
 
+/*
 const {name, surname} = test3;
 console.log(name, surname);
 
@@ -70,7 +91,7 @@ function fun2({name, surname}){
 
 const fun3 = ({name, surname}) => console.log(`Hello ${name} ${surname} !!!`);
 
-
+*/
 
 
 

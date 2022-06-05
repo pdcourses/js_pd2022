@@ -1,35 +1,68 @@
-// method for-in for-of
+/*CLASS*/
+
+// ООП
 
 /*
-let a = [], i;
-for(i=0; i<a.length; i++){
-    console.log(a[i]);
-}
+фундамент - объект
+
+class - класс для обьекта (не класс правила CSS)
+сложный тип данных, то что описывает объект, набор свойств
+очень похожа на шаблон
+родитель для объектов
+"паска"
+"шаблон"
+"станок"
 */
 
-// object  for-in
+//{login: '', password: ''}
+class User{
+    //constructor - функция которая описывает создание будущих объектов
+    // this - указатель на текущий объект
+    // в качетсве параметра - примитив (число, строка..) [] {}
+    constructor(loginValue, passwordValue){
+        this.login = loginValue;
+        this.password = passwordValue;
+    }
+    outObject(){
+        console.log(this);
+    }
+};
 
-const user = {
-    name: 'Vasya',
-    surname: 'Ivanov',
-    age: 20,
-    isMale: true
-}; 
+// new - оператор для создания нового объекта
+const user1 = new User('login1', 'qwerty');
+const user2 = new User('superman', 'qwerty12345');
+const user3 = new User('vasya-petrov', 'qwerty');
 
-for(let i in user){
-    console.log('key=', i);
-    console.log('value=', user[i]);
-}
+console.log('user#1: ',user1);
+console.log('user#2: ',user2);
+console.log('user#3: ',user3);
 
-// array   for-of    / for(){}     / array.forEach()
-// если для каждого элемента чтото сделать надо
+console.log('*****************');
 
-const a = [10,20,30,40,50];
+user1.outObject();
+user2.outObject();
+user3.outObject();
 
-for(let value of a){
-    console.log(`el=${value}`);
-}
+//  класс машин
+// модель, цвет, год выпуска, объект двигателя (модель, мощность)
 
+class Engine{
+    constructor(name, power){
+        this.name = name;
+        this.power = power;
+    }
+};
 
-
-
+class Car{
+    constructor(model, color, year, engine){
+        this.model = model;
+        this.color = color;
+        this.year = year;
+        this.engine = engine;
+    }
+};
+const engine1 = new Engine('1234-12345677', 1000);
+const car1 = new Car('modelX', 'black', 2022, engine1);
+console.log(car1);
+console.log(car1.model);
+console.log(car1.engine);

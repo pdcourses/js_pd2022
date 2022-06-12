@@ -1,42 +1,35 @@
-// id
-let conteinerElement = document.getElementById('container');
-//console.log(conteinerElement);
-// backgroud-color: blue
-conteinerElement.style.backgroundColor = 'red';
-console.log(typeof conteinerElement);
+let divContElem = document.querySelector('div.container');
+divContElem.remove();
 
-let arrayOrangedPa = document.querySelectorAll('p.orangeP');
+// создание нового элемента
+// 1. тег? 
+// 2. наполняем его (содержимое)  и/или дать класс/id
+// 3. прикрепить к родителю или body
+
+let testDiv = document.createElement('div');
+testDiv.className = "test";
+testDiv.style.width = "300px";
+testDiv.style.height = "100px";
+testDiv.style.backgroundColor = "orange";
+testDiv.innerHTML = "<p class='innerP'> I am here ^) </p>";
+
+let testP = document.createElement('p');
+testP.className = "test-para";
+testP.innerText = "It is my first message in DOM element!"
+testP.setAttribute('class', 'bigText');
+
+// добавление node.append(newNode) - в конец
+// prepend(newСhild) в начало
+// before(newChild), after(newChild), replaceWith(newChild)
+document.body.append(testDiv);
+document.body.append(testP);
+
+
 /*
-for(let i=0; i<arrayOrangedPa.length; i++){
-    arrayOrangedPa[i].style.backgroundColor = 'orange';
-    arrayOrangedPa[i].style.fontSize = '30px';
-}
-*/
-
-//array1.forEach(element => console.log(element));
-arrayOrangedPa.forEach(el => {
-    el.style.backgroundColor = 'orange';
-    el.style.color = 'white';
-    el.style.fontSize = '25px';
-})
-
-
-/*
-id #nameid  class .nameclass
-
-document.querySelector('div#container')  //id
-document.querySelector('#container')  //id
-document.querySelector('.ligthP');  // class
-document.querySelector('p.ligthP');  // class
-document.querySelector('div > .ligthP');  // class
-document.querySelector('div#container > .ligthP');  // class
-*/
-/*
-getElementById(id)
-querySelector(css selector)
-querySelectorAll(css selector)
-
-getElementsByTagName(tag)
-getElementsByClassName(class)
-getElementsByName(class)
+// получить див контейнер и туда добавить заголовок и параграф с помощью DOM
+let divContElem = document.querySelector('div.container');
+let h1Elem = document.createElement('h1');
+let pElem = document.createElement('p');
+divContElem.append(h1Elem);
+divContElem.append(pElem);
 */

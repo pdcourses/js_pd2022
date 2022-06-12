@@ -16,7 +16,7 @@ testDiv.innerHTML = "<p class='innerP'> I am here ^) </p>";
 let testP = document.createElement('p');
 testP.className = "test-para";
 testP.innerText = "It is my first message in DOM element!"
-testP.setAttribute('class', 'bigText');
+testP.setAttribute('class', 'bigText redText');
 
 // добавление node.append(newNode) - в конец
 // prepend(newСhild) в начало

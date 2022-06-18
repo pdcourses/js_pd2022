@@ -1,29 +1,23 @@
-/* HTMLElement - Element - Node - EventTarget */
+let colors = ['green', 'red', 'yellow', 'blue'];
 
-const btn = document.getElementById('btn');
-
-let isHello = true;
-
-btn.addEventListener("click", fun1);
-
-function fun1(e) {
-    alert('Hello, User !');
-    //isHello = !isHello; 
-    btn.removeEventListener('click', fun1);
-    //btn.addEventListener('click', fun2);
+let container = document.getElementById('container');
+const count = 100;
+for(let i=0; i<=count; i++){
+    const square = document.createElement('div');
+    square.classList.add('squareStyle');
+    container.append(square);
+    square.addEventListener('mouseover', () => {
+        square.style.background = getColor(colors);
+        //square.style.background = '#' + Math.floor(Math.random()*16777215).toString(16);
+    });
+    square.addEventListener('mouseleave', () => {
+        square.style.background = 'gray';
+    } )
 }
 
-function fun2(e) {
-    alert('Bye )');
-    //isHello = !isHello;
-    btn.removeEventListener('click', fun2);
-    //btn.addEventListener('click', fun1);
+function getColor(arr){
+    const color = arr[Math.floor(Math.random(arr.length-1))*10];
+    console.log(color);
+    console.log(arr.length);
+    return color;
 }
-
-
-
-/*
-btn.onclick = function(){ console.log('Hello!!')}
-
-btn.onclick = function(){ console.log('Bye )')}
-*/

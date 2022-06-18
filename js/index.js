@@ -1,35 +1,27 @@
-let divContElem = document.querySelector('div.container');
-divContElem.remove();
-
-// создание нового элемента
-// 1. тег? 
-// 2. наполняем его (содержимое)  и/или дать класс/id
-// 3. прикрепить к родителю или body
-
-let testDiv = document.createElement('div');
-testDiv.className = "test";
-testDiv.style.width = "300px";
-testDiv.style.height = "100px";
-testDiv.style.backgroundColor = "orange";
-testDiv.innerHTML = "<p class='innerP'> I am here ^) </p>";
-
-let testP = document.createElement('p');
-testP.className = "test-para";
-testP.innerText = "It is my first message in DOM element!"
-testP.setAttribute('class', 'bigText redText');
-
-// добавление node.append(newNode) - в конец
-// prepend(newСhild) в начало
-// before(newChild), after(newChild), replaceWith(newChild)
-document.body.append(testDiv);
-document.body.append(testP);
-
-
 /*
-// получить див контейнер и туда добавить заголовок и параграф с помощью DOM
-let divContElem = document.querySelector('div.container');
-let h1Elem = document.createElement('h1');
-let pElem = document.createElement('p');
-divContElem.append(h1Elem);
-divContElem.append(pElem);
+Получение элементов
+1 document.getElementById('idElem')
+2document.querySelector(css)  '.myClass'   '#idElem'   'ul > li:last-child' '.cont > .myClass'
+3 document.querySelectorAll(css)   return []
+4 *document.getElementsByTagName()  getElementsByClassName() getElementsByName()
+5 elem.closest(css)
+6 elem.matches(css)
+
+Атрибуты Элемента
+elem.getAttribute(nameAttr)
+elem.setAttribute(nameAttr, valueAttr)
+elem.hasAttribute(nameAttr)
+elem.attributes 
+
+Создание document.createElement(tag)
+Удаление elem.remove()
+Копирование / клонирование elem.cloneNode()
+
+Вставка/ добавление
+node.append(elem)
+prepend(elem)
+before() / after()
+replaceWith()
+* appendChild(), insertChild(), replaceChild(), removeChild()
+
 */

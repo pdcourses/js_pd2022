@@ -16,8 +16,8 @@ for(let i=0; i<=count; i++){
 }
 
 function getColor(arr){
-    const color = arr[Math.floor(Math.random(arr.length-1))*10];
-    console.log(color);
-    console.log(arr.length);
+    const index = Math.floor( Math.random() * arr.length );
+    console.log(index);
+    const color = arr[index];
     return color;
 }

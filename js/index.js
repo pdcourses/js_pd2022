@@ -47,15 +47,45 @@ function createCard(objUser){
     return card;
 }
 
-const user = {
-    imgSrc: '#',
-    fullName: 'Tom Fox',
-    stats: {
-        fb: '10000',
-        insta: '12500',
-        tel: '8600'
-    }
-};
+const users = [
+    {
+        imgSrc: '#',
+        fullName: 'Tom Fox',
+        stats: {
+            fb: '10000',
+            insta: '12500',
+            tel: '8600'
+        }
+    },
+    {
+        imgSrc: '#',
+        fullName: 'John Smith',
+        stats: {
+            fb: '10000',
+            insta: '12500',
+            tel: '8600'
+        }
+    },
+    {
+        imgSrc: '#',
+        fullName: 'Ann Fox',
+        stats: {
+            fb: '10000',
+            insta: '12500',
+            tel: '8600'
+        }
+    },
 
-const userCards = document.getElementById('userCardsContainer');
-userCards.append(createCard(user));
+
+];
+
+const userCards = document.getElementById('userCardsContainer'); //ulu
+const usersCardsElem = users.map( u => document.createElement('li').append(createCard(u)));
+/*
+for(let i=0; i<users.length; i++){
+    userCards.append(document.createElement('li').append(createCard(users[i])));
+    
+    // создание li с карточкой document.createElement('li').append(createCard(users[i]))
+}
+*/
+userCards.append(usersCardsElem);

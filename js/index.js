@@ -36,7 +36,7 @@ function createBtnContainer(stats){
 }
 
 function createCard(objUser){
-    const card = document.createElement('div');
+    const card = document.createElement('li');
     card.classList.add('card_container');
     card.append(createUserImage(objUser.imgSrc));
     const infoCont = document.createElement('div');
@@ -80,12 +80,5 @@ const users = [
 ];
 
 const userCards = document.getElementById('userCardsContainer'); //ulu
-const usersCardsElem = users.map( u => document.createElement('li').append(createCard(u)));
-/*
-for(let i=0; i<users.length; i++){
-    userCards.append(document.createElement('li').append(createCard(users[i])));
-    
-    // создание li с карточкой document.createElement('li').append(createCard(users[i]))
-}
-*/
-userCards.append(usersCardsElem);
+users.forEach( u => userCards.append(createCard(u)))
+

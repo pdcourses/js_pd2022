@@ -13,3 +13,13 @@ body{
     flex-direction: column;
     background-color: #ccc;
 }
+
+.color1{
+    background-color: white;
+    border-color: black;
+}
+
+.color2{
+    background-color: black;
+    border-color: aqua;
+}

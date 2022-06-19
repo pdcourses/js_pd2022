@@ -1,23 +1,20 @@
-let colors = ['green', 'red', 'yellow', 'blue'];
+/*
+<div id="userList" class="container" name="cards" isChoose="1">  
+        <p>first</p>
+        <p>second</p>
+        <p>third</p>
+        <p>4-th</p>      
+    </div>
+    */
 
-let container = document.getElementById('container');
-const count = 100;
-for(let i=0; i<=count; i++){
-    const square = document.createElement('div');
-    square.classList.add('squareStyle');
-    container.append(square);
-    square.addEventListener('mouseover', () => {
-        square.style.background = getColor(colors);
-        //square.style.background = '#' + Math.floor(Math.random()*16777215).toString(16);
-    });
-    square.addEventListener('mouseleave', () => {
-        square.style.background = 'gray';
-    } )
-}
-
-function getColor(arr){
-    const index = Math.floor( Math.random() * arr.length );
-    console.log(index);
-    const color = arr[index];
-    return color;
-}
+let elem = document.getElementById('userList');
+console.log(elem);
+console.log(elem.attributes);
+console.log(elem.attributes[0]); // id 
+console.log(elem.attributes[0].value); // userList
+console.log(elem.nodeType);
+console.log(elem.id);
+console.log(elem.childNodes);
+console.log(elem.children);
+console.log(elem.firstChild);
+console.log(elem.lastChild);

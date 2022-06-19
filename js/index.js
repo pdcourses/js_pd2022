@@ -1,9 +1,29 @@
-const box = document.getElementById('test');
+const sliderEl = document.getElementById('slider');
+const leverEl = document.getElementById('lever');
+let shiftX =0;
+console.log(sliderEl.style.borderWidth);
 
-const outXY = (event) => {
-    console.log('Client XY = ',event.clientX, event.clientY);
-    console.log('Offset XY = ',event.offsetX, event.offsetY);
-    console.log('Type event:',event.type,'Target:', event.target);
-};
+// нажать 
+leverEl.addEventListener('mousedown', handleMouseDown);
 
-box.addEventListener('click', outXY);
+function handleMouseDown(e){
+    e.preventDefault();
+    shiftX = e.clientX - leverEl.getBoundingClientRect().left;
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+}
+
+function handleMouseMove(e){
+    let left = e.clientX - shiftX - sliderEl.getBoundingClientRect().left;
+    let rigth = sliderEl.offsetWidth - leverEl.offsetWidth; 
+    if(left < 0) left = 0;
+    if(left > rigth) left = rigth;
+    leverEl.style.left = left + 'px';
+
+}
+
+function handleMouseUp(e){
+    document.removeEventListener('mouseup', handleMouseUp);
+    document.removeEventListener('mousemove', handleMouseMove);
+}
+

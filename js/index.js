@@ -1,24 +1,9 @@
-const divArray = document.querySelectorAll('.box');
+const box = document.getElementById('test');
 
-function handleChangeColor1 (e) {  
-    this.classList.remove('color2');  
-    this.classList.add('color1');
-    this.removeEventListener('click', handleChangeColor1);
-    this.addEventListener('click', handleChangeColor2);
-}
+const outXY = (event) => {
+    console.log('Client XY = ',event.clientX, event.clientY);
+    console.log('Offset XY = ',event.offsetX, event.offsetY);
+    console.log('Type event:',event.type,'Target:', event.target);
+};
 
-function handleChangeColor2 (e) {
-    this.classList.remove('color1'); 
-    this.classList.add('color2');
-    this.removeEventListener('click', handleChangeColor2);
-    this.addEventListener('click', handleChangeColor1);
-
-}
-
-divArray.forEach( el => {
-    el.addEventListener('click', handleChangeColor1);
-    // el.firstChild.addEventListener
-    el.children[0].addEventListener('click', (event) => el.remove())
-});
-
-
+box.addEventListener('click', outXY);

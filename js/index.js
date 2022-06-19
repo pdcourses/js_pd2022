@@ -1,29 +1,33 @@
-const btn = document.querySelector('.container');
-const p = document.getElementById('info');
-
-btn.addEventListener('click', handleFun);
-
-let counter = 0;
+const divArray = document.querySelectorAll('.box');
 
 /*
-// вывести текущую дату
-function handleFun (e) {
-    console.log(e);
-    const date = new Date();
-    console.log(date);
-    p.innerText = date;
+const handleChangeColor1 = (e) => {
+    //console.log(this);   window
+    //console.log(e);
 }
 */
 
-// счетчик
-// вывести текущую дату
-function handleFun (e) {
-    p.innerText = counter;
-    counter++;
+function handleChangeColor1 (e) {
+    //console.log(this);
+    //console.log(e);
+    this.style.background = 'black';
+    this.removeEventListener('click', handleChangeColor1);
+    this.addEventListener('click', handleChangeColor2);
 }
 
-let rem = document.getElementById('remBtn');
-rem.addEventListener('click', (e) => {
-    console.log(e);
-    counter = 0;
-});
+function handleChangeColor2 (e) {
+    this.style.background = 'white';
+    this.removeEventListener('click', handleChangeColor2);
+    this.addEventListener('click', handleChangeColor1);
+
+}
+
+divArray.forEach( el => el.addEventListener('click', handleChangeColor1));
+
+
+
+/*
+for(let i=0; i<divArray.length; i++){
+    divArray[i].addEventListener();
+}
+*/

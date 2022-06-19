@@ -1,29 +1,12 @@
-const sliderEl = document.getElementById('slider');
-const leverEl = document.getElementById('lever');
-let shiftX =0;
-console.log(sliderEl.style.borderWidth);
+let el = document.querySelector('select');
 
-// нажать 
-leverEl.addEventListener('mousedown', handleMouseDown);
+el.addEventListener('change', (e) => {
+    console.log(e.target.value); // выбранный список значение
+})
 
-function handleMouseDown(e){
-    e.preventDefault();
-    shiftX = e.clientX - leverEl.getBoundingClientRect().left;
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-}
+let btn = document.querySelector('button');
+let inputText = document.querySelector('input#login');
 
-function handleMouseMove(e){
-    let left = e.clientX - shiftX - sliderEl.getBoundingClientRect().left;
-    let rigth = sliderEl.offsetWidth - leverEl.offsetWidth; 
-    if(left < 0) left = 0;
-    if(left > rigth) left = rigth;
-    leverEl.style.left = left + 'px';
-
-}
-
-function handleMouseUp(e){
-    document.removeEventListener('mouseup', handleMouseUp);
-    document.removeEventListener('mousemove', handleMouseMove);
-}
-
+btn.addEventListener('click', (e) => {
+    console.log(inputText.value); // содержимое в поле инпут
+})

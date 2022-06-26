@@ -4,10 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
     <title>Document</title>
 </head>
-<body> 
+<body>
+    <form action="#">
+        <!--
+            input
+            type="text"
+            type="radio"
+            type="checkbox"
+            type="button"
+            type="button"
+            type="password"
+            type="email"
+        -->
+
+<label for="login">Login:</label>
+<input id="login" type="text" name="userName" placeholder="your login" required>
+
+<br/>
+
+<label>
+    <input type="radio" name="plan" value="starter"><span>starter</span>
+    <input type="radio" name="plan" value="home" checked><span>home</span>
+    <input type="radio" name="plan" value="work"><span>work</span>
+    <input type="radio" name="plan" value="pro"><span>pro</span>
+</label>
+
+<br/>
+
+<label>
+    <input type="checkbox" name="plan" value="starter"><span>starter</span>
+    <input type="checkbox" name="plan" value="home"><span>home</span>
+    <input type="checkbox" name="plan" value="work"><span>work</span>
+    <input type="checkbox" name="plan" value="pro"><span>pro</span>
+</label>
+
+<br/>
+
+<select name="currency">
+    <option value="USD">$</option>
+    <option value="EUR">&#8364</option>
+    <option value="UAH">&#8372</option>
+</select>
+    
+
+    </form> 
     
 <script src="./js/index.js"></script>
 </body>

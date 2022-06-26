@@ -1,7 +1,9 @@
-const COLORS = ["red", "yellow", "geen", "blue", "orange"];
+const COLORS = ["#e91c1c", "#e91c86", "#1eca83", "#561ce9", "#f1a50d"];
 const menuContainer = document.querySelector('.container');
 const items = document.querySelectorAll('.item');
-let activeElement = menuContainer.querySelector(".active");
+let indexActive = 0;
+let activeElement = menuContainer[indexActive];
+document.body.style.backgroundColor = COLORS[indexActive];
 
 function workActive(i, index){
     if(activeElement == i) return;
@@ -13,6 +15,7 @@ function workActive(i, index){
 }
 
 items.forEach((i, index) => {
+    i.style.backgroundColor = COLORS[index];
     i.addEventListener("click", (event) => workActive(i, index));
 });
 

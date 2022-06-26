@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="./css/style.css">-->
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
     <form action="#">
         <div class="logo">
-            <img src="#" alt="user photo">
+            <img src="https://www.youloveit.ru/uploads/gallery/main/800/youloveit_ru_genguins_of_madagaskar_imag_27.jpg" alt="user photo">
         </div>
-        <p>Member login</p>
-        <input id="userName" type="text" name="userName" placeholder="user name" required>
+        <p class="member">Member login</p>
+        <input id="userName" type="text" name="userName" pattern="[A-Za-z]+" placeholder="user name" required>
         <input id="userPassword" type="password" name="userPassword" placeholder="user password" required>
-        <div class="">
+        <button id="send">Send</button>
+        <div class="remember_container">
             <input type="checkbox" checked><span>Remember me</span>
             <div class="rememberMe">
                 <a class="forgot" href="#"> Forgot password?</a>

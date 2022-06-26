@@ -9,49 +9,23 @@
 </head>
 <body>
     <form action="#">
-        <!--
-            input
-            type="text"
-            type="radio"
-            type="checkbox"
-            type="button"
-            type="button"
-            type="password"
-            type="email"
-        -->
-
-<label for="login">Login:</label>
-<input id="login" type="text" name="userName" placeholder="your login" required>
-
-<br/>
-
-<label>
-    <input type="radio" name="plan" value="starter"><span>starter</span>
-    <input type="radio" name="plan" value="home" checked><span>home</span>
-    <input type="radio" name="plan" value="work"><span>work</span>
-    <input type="radio" name="plan" value="pro"><span>pro</span>
-</label>
-
-<br/>
-
-<label>
-    <input type="checkbox" name="plan" value="starter"><span>starter</span>
-    <input type="checkbox" name="plan" value="home"><span>home</span>
-    <input type="checkbox" name="plan" value="work"><span>work</span>
-    <input type="checkbox" name="plan" value="pro"><span>pro</span>
-</label>
-
-<br/>
-
-<select name="currency">
-    <option value="USD">$</option>
-    <option value="EUR">&#8364</option>
-    <option value="UAH">&#8372</option>
-</select>
-    
-
-    </form> 
-    
+        <div class="logo">
+            <img src="#" alt="user photo">
+        </div>
+        <p>Member login</p>
+        <input id="userName" type="text" name="userName" placeholder="user name" required>
+        <input id="userPassword" type="password" name="userPassword" placeholder="user password" required>
+        <div class="">
+            <input type="checkbox" checked><span>Remember me</span>
+            <div class="rememberMe">
+                <a class="forgot" href="#"> Forgot password?</a>
+            </div>
+        </div>
+    </form>   
+    <div class="toReg">
+        <p class="sign">Don't have an account?</p>
+        <a href="#">Sign up here!</a>
+    </div> 
 <script src="./js/index.js"></script>
 </body>
 </html>

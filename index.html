@@ -8,25 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="#">
-        <div class="logo">
-            <img src="https://www.youloveit.ru/uploads/gallery/main/800/youloveit_ru_genguins_of_madagaskar_imag_27.jpg" alt="user photo">
-        </div>
-        <p class="member">Member login</p>
-        <input id="userName" type="text" name="userName" pattern="[A-Za-z]+" placeholder="user name" required>
-        <input id="userPassword" type="password" name="userPassword" placeholder="user password" required>
-        <button id="send">Send</button>
-        <div class="remember_container">
-            <input type="checkbox" checked><span>Remember me</span>
-            <div class="rememberMe">
-                <a class="forgot" href="#"> Forgot password?</a>
-            </div>
-        </div>
-    </form>   
-    <div class="toReg">
-        <p class="sign">Don't have an account?</p>
-        <a href="#">Sign up here!</a>
-    </div> 
+    <div class="container">
+        <input  type="text" id="task" placeholder="Enter your task">
+        <button id="btnAdd">Add task</button>
+        <button id="btnDel">Del tasks</button>
+    </div>
+    <ul id="tasks"></ul>
+
+   
 <script src="./js/index.js"></script>
 </body>
 </html>

@@ -1,27 +1,27 @@
-function MyArray(){
-    this.length = 0;
-}
-MyArray.prototype = {
-    push(val){
-        this[ this.length++] = val;
-    },
-    pop(){
-        if(this.length > 0){
-            const res = this[--this.length];
-            delete this[this.length];
-            return res;
-        }
+/*
+class User{
+    constructor(login, password){
+        this.login = login;
+        this.password = password;
     }
-};
 
-const a = new MyArray();
-console.log(a);
-a.push(10);
-a.push('hello');
-a.push({name: "Vasya"})
-a.push( (() => {} ));
+}
+const user1 = new User('vasya10', 'qwerty');
+*/
 
-console.log(a);
+function User(login, password){
+    this.login = login;
+    this.password = password;
+}
 
-a.pop();
-console.log(a);
+function Stud(name, surname, age){
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+}
+
+const user1 = new User('vasya10', 'qwerty');
+const stud1 = new Stud('Vasya', 'Ivanov', 20);
+
+Stud.prototype = new User();
+

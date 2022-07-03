@@ -15,3 +15,4 @@ data.onsubmit = () => {
     location.replace(location.origin);
     return false;
 };
+

@@ -1,28 +1,26 @@
-const [widthElement, heightElement] = document.querySelectorAll('p');
-//widthElement.innerText = `width ${window.innerWidth} px`;
-//heightElement.innerText = `heigth ${window.innerHeight} px`;
-
-function funRezize(){
-    widthElement.innerText = `width ${window.innerWidth} px`;
-    heightElement.innerText = `heigth ${window.innerHeight} px`;
+const colors = document.querySelectorAll('input[type="range"]');
+for(const i of colors){
+    i.oninput = updateColor;
 }
 
-function logEvent(event){
-    console.log(event);
+window.onload = function(){
+    const color = localStorage.getItem('bodyColor');
+    if(color){
+        document.body.style.backgroundColor = color;
+    }
+};
+
+window.onclose = function(){
+    localStorage.setItem('bodyColor', 'document.body.style.backgroundColor');
 }
 
-//1
-//window.addEventListener("resize", funRezize);
-
-//2
-window.onresize = funRezize; 
-window.onload = funRezize;
-window.ondblclick = logEvent;
-window.onclick = logEvent;
-window.onkeydown = logEvent;
-window.onkeyup = logEvent;
-
-widthElement.onfocus = logEvent;
-widthElement.onblur = logEvent;
-widthElement.onchange = logEvent;
-widthElement.oninput = logEvent;
+function updateColor(){
+    //rgba(r,g,b,a)
+    const red = colors[0].value;
+    const green = colors[1].value;
+    const blue = colors[2].value;
+    const a = colors[3].value;
+    const newBodyColor = "rgba("+red+","+green+","+blue+","+a+")";
+    document.body.style.backgroundColor = newBodyColor;
+    localStorage.setItem('bodyColor', 'document.body.style.backgroundColor');
+}
